@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini WhatsApp</title>
+  <style>
+    
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eeeaea;
+}
+
+.container {
+      max-width: 500px;
+      margin: 6px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+header {
+  background-color: #128c7e;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.create-chat-btn, .delete-post-btn, .edit-post-btn,.see-post-btn {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.edit-post-btn{
+  margin: 10px;
+  border-radius: 7px;
+  padding: 7px 15px;
+}
+
+.create-chat-btn {
+  background-color: #2b702d;
+}
+
+.delete-post-btn{
+  background-color: #fd3535;
+}
+.edit-post-btn{
+  background-color: #d63384;
+}
+.edit-post-btn:hover{
+  background-color: #d8217d;
+}
+
+.delete-post-btn:hover {
+  background-color: #ff2222;
+}
+.create-post-btn:hover {
+  background-color: #169b1b;
+}
+.see-post-btn{
+  background-color: #24559e;
+}
+.see-post-btn:hover{
+  background-color: #1e3494;
+}
+
+.msg{
+  display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  background-color: rgb(81, 81, 180);
+  padding: 5px 15px;
+  border-radius: 15px;
+  color: #fff;
+}
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mini Chat App</h1>
+  </header>
+  <h2 style="text-align: center;">Edit Chat</h2>
+  <div class="sup-container">
+    <main class="container">
+      <form action="/chats/new" method="get">
+        <button class="create-chat-btn">Create Chat</button>
+    </main>
+    </form>
+  </div>
+  <% if(chat){ %>
+    <div class="sup-container">
+      <main class="container">
+            
+                <p> From: <i> <%= chat.from %> </i>  </p>
+                <div class="msg">
+                    <form method="POST" action="/chats/<%= chat.id %>?_method=PUT" >
+                    <textarea style="margin-top: 10px;" name="message" id="" cols="60" rows="7"><%= chat.message %></textarea><br>
+                    <button  class="edit-post-btn">Edit msg</button>
+                    </form>
+                </div>
+            <p>To: <i> <%= chat.to %> </i></p>
+            <hr>
+      </main>
+    </div>
+    <% } %>
+      <br>
+</body>
+</html>
+
+
+

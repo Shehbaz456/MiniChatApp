@@ -1,0 +1,83 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eeeaea;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+      max-width: 500px;
+      margin: 6px auto;
+      background-color: #ffffff;
+      /* padding-top: 10px; */
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+header {
+  background-color: #128c7e;
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+  font-style: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.create-chat-btn, .delete-chat-btn, .edit-chat-btn,.see-chat-btn {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.edit-chat-btn , .delete-chat-btn {
+  border-radius: 7px;
+  padding: 7px 15px;
+}
+.delete-chat-btn{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.create-chat-btn {
+  background-color: #2b702d;
+}
+
+.delete-chat-btn{
+  background-color: #fd3535;
+}
+.edit-chat-btn{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: #d63384;
+}
+.edit-chat-btn:hover{
+  background-color: #d8217d;
+}
+
+.delete-chat-btn:hover {
+  background-color: #ff2222;
+}
+.create-post-btn:hover {
+  background-color: #169b1b;
+}
+.see-post-btn{
+  background-color: #24559e;
+}
+.see-post-btn:hover{
+  background-color: #1e3494;
+}
+
+.msg{
+  display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+  background-color: rgb(81, 81, 180);
+  padding: 0px 15px;
+  border-radius: 15px;
+  color: #fff;
+}

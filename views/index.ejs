@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini WhatsApp</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    Mini Chat App
+  </header>
+  <div class="sup-container" style="padding-top:15px; padding-bottom: 9px; ">
+    <main class="container">
+      <form action="/chats/new" method="get">
+        <button class="create-chat-btn">Create Chat</button>
+    </main>
+    </form>
+  </div>
+  <% for(let chat of chats){ %>
+    <div class="sup-container">
+      <main class="container">
+            <p> From: <i> <%= chat.from %> </i>  </p>
+            <div class="msg">
+              <p><i>message:</i> <%= chat.message %>
+              </p>
+              
+            </div>
+            
+        <p>To:<i>
+            <%= chat.to %>
+          </i></p>
+        <hr>
+        <div style="display: flex; justify-content: space-between; align-items: center;" >
+              <div>
+                <span> <i><b>Date: </b><%= chat.created_at.toString().split(" ").slice(1,4).join(" -") %></i></span>
+                <span><i><b>  Time: </b><%= chat.created_at.toString().split(" ")[4] %></i></span>
+             </div>
+
+             <div style="display: flex;justify-content: end; align-items: center;">
+                <form action="/chats/<%= chat.id %>/edit" method="get">
+                  <button class="edit-chat-btn">Edit Chat</button>
+                </form>
+                <form method="POST" action="/chats/<%= chat.id %>?_method=DELETE">
+                  <button class="delete-chat-btn">Delete</button>
+                </form>
+              </div>
+        </div>
+      </main>
+    </div>
+    <% } %>
+      <br>
+</body>
+
+</html>
+
+
